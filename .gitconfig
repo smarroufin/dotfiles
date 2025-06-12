@@ -1,0 +1,43 @@
+[user]
+	name = Sylvain Marroufin
+	email = marroufin.sylvain@gmail.com
+	username = smarroufin
+[branch]
+	sort = -committerdate
+[column]
+	ui = auto
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	renames = true
+	mnemonicPrefix = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[gpg]
+	program = gpg1
+[help]
+	autocorrect = prompt
+[init]
+	defaultBranch = main
+[merge]
+	conflictstyle = zdiff3
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+	followTags = true
+[rerere]
+	enabled = true
+	autoupdate = true
+[tag]
+	sort = version:refname
+[alias]
+	cm = commit -m
+	stasha = stash --all
