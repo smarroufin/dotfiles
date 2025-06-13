@@ -1,6 +1,7 @@
 return {
   {
     'stevearc/oil.nvim',
+    enabled = not vim.g.vscode,
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
@@ -13,6 +14,10 @@ return {
         desc = 'Open Oil',
       },
     },
-    opts = {},
+    opts = {
+      view_options = {
+        show_hidden = true,
+      },
+    },
   },
 }

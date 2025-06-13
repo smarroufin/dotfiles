@@ -1,6 +1,7 @@
 return {
   {
     'hrsh7th/nvim-cmp',
+    enabled = false,
     event = 'InsertEnter',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
@@ -8,7 +9,6 @@ return {
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
     },
-    enabled = false,
     config = function()
       local cmp = require('cmp')
       cmp.setup({

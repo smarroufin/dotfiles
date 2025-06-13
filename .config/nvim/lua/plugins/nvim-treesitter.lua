@@ -1,6 +1,7 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
+    enabled = not vim.g.vscode,
     build = ':TSUpdate',
     event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
     dependencies = {
