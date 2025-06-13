@@ -1,0 +1,19 @@
+*
+!.gitignore
+!.config/
+# fish
+!.config/fish/
+!.config/fish/config.fish
+# nvim
+!.config/nvim/
+!.config/nvim/**
+# wezterm
+!.config/wezterm
+!.config/wezterm/**
+# git
+!.gitconfig
+# tmux
+!.tmux.conf
+# zsh
+!.zprofile
+!.zshrc
