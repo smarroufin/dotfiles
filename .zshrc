@@ -9,21 +9,11 @@ alias "zshrc"="edit ~/.zshrc"
 # gotos
 alias "cdconfig"="cd ~/.config"
 alias "cdcode"="cd ~/Code"
-# android
-alias "adb-list"="adb shell 'pm list packages -f' | sed -e 's/.*=//' | sort"
-alias "adb-connect-chromebook"="adb connect 100.115.92.2:5555"
-alias "gradle-clean-logs"="find ~/.gradle/daemon -name '*.out.log' -delete"
 # apps
 alias "edit"="nvim"
-alias "simulator"="open -a Simulator.app"
 # brew
 alias "brew-formulae"="brew list --formulae -1 --installed-on-request"
 alias "brew-casks"="brew list --casks -1"
-# docker
-alias "doc"="docker compose"
-alias "doc-db-redis"="docker compose up -d db redis"
-alias "docker-redis-sh"="docker exec -it $(docker ps | grep -i 'redis' | sed 's/ redis .*$//g') sh"
-alias "docker-clear"="docker image prune -f;docker volume prune -f"
 # binaries proxies
 alias "cloc"="echo \"Use 'scc' instead.\"; cloc"
 alias "man"="echo \"Remember you have 'tldr'?\"; man"
@@ -61,7 +51,7 @@ function nx() {
 alias "ni"="n install"
 alias "nr"="n run"
 # prisma
-alias "prisma-generate-migrate"="nx prisma generate;nx prisma migrate deploy"
+alias "prisma-generate-migrate"="nx prisma generate && nx prisma migrate deploy"
 
 # run compaudit and automatically fix permissions
 autoload -Uz compaudit
