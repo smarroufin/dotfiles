@@ -1,12 +1,4 @@
 {
-  "<NuxtLink>": {
-    "prefix": [
-      "<NuxtLink>"
-    ],
-    "body": [
-      "<NuxtLink to=\"$1\">$2</NuxtLink>"
-    ]
-  },
   "<vue>": {
     "prefix": [
       "<vue>"

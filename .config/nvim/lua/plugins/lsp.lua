@@ -41,7 +41,7 @@ vim.lsp.config('ts_ls', {
     },
   },
 })
-vim.lsp.config('volar', {
+vim.lsp.config('vue_ls', {
   settings = {
     html = {
       format = {

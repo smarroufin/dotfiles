@@ -38,37 +38,5 @@
     "body": [
       "[...new Set($1)]"
     ]
-  },
-  "strapi.query": {
-    "prefix": [
-      "strapi.query"
-    ],
-    "body": [
-      "strapi.query('api::$1.$1')"
-    ]
-  },
-  "strapi.doc": {
-    "prefix": [
-      "strapi.doc"
-    ],
-    "body": [
-      "strapi.documents('api::$1.$1')"
-    ]
-  },
-  "strapi.errors": {
-    "prefix": [
-      "strapi.errors"
-    ],
-    "body": [
-      "import { errors } from '@strapi/utils'"
-    ]
-  },
-  "strapi.factories": {
-    "prefix": [
-      "strapi.factories"
-    ],
-    "body": [
-      "import { factories } from '@strapi/strapi'"
-    ]
   }
 }
