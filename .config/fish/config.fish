@@ -52,9 +52,13 @@ alias mv="mv -i"
 # gotos
 alias cdconfig="cd ~/.config"
 alias cdcode="cd ~/Code"
+function "gh-open"
+    set -l repo (git remote get-url origin | sed 's/.*github.com[:\/]\(.*\)\.git/\1/')
+    open "https://github.com/$repo"
+end
 # apps
 alias edit="nvim"
-alias simulator="open -a Simulator.app"
+alias lg="lazygit"
 # brew
 alias brew-formulae="brew list --formulae -1 --installed-on-request"
 alias brew-casks="brew list --casks -1"
