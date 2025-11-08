@@ -7,7 +7,9 @@ return {
       vim.cmd.colorscheme('carbonfox')
     end,
     opts = {
-      transparent = true,
+      options = {
+        transparent = true,
+      },
     },
   },
 }
