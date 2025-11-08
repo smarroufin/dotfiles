@@ -1,7 +1,6 @@
 return {
   {
     'nvim-telescope/telescope.nvim',
-    enabled = not vim.g.vscode,
     event = 'VimEnter',
     branch = '0.1.x',
     dependencies = {
@@ -49,10 +48,7 @@ return {
       { 'gO', require('telescope.builtin').lsp_document_symbols, desc = 'Document Symbols' },
       -- git
       { '<leader>gs', require('telescope.builtin').git_status, desc = 'Git status' },
-      { '<leader>gb', require('telescope.builtin').git_branches, desc = 'Git branches' },
-      { '<leader>gc', require('telescope.builtin').git_commits, desc = 'Git commits' },
       { '<leader>gf', require('telescope.builtin').git_bcommits, desc = 'Git file commits' },
-      { '<leader>gh', require('telescope.builtin').git_stash, desc = 'Git stash' },
       -- telescope
       { '<leader><leader>b', require('telescope.builtin').builtin, desc = 'Builtin' },
     },

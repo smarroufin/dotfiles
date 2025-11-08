@@ -1,7 +1,7 @@
 return {
   {
     'meeehdi-dev/bropilot.nvim',
-    enabled = not vim.g.vscode,
+    enabled = false,
     event = 'VeryLazy',
     dependencies = {
       'nvim-lua/plenary.nvim',

@@ -54,7 +54,6 @@ vim.lsp.config('vue_ls', {
 return {
   {
     'neovim/nvim-lspconfig',
-    event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
     dependencies = {
       {
         'mason-org/mason.nvim',

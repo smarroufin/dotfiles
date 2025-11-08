@@ -1,7 +1,6 @@
 return {
   {
     'stevearc/conform.nvim',
-    enabled = not vim.g.vscode,
     event = { 'BufReadPre', 'BufNewFile' },
     cmd = { 'ConformInfo' },
     keys = {
