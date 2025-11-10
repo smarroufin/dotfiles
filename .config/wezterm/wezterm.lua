@@ -5,11 +5,31 @@ local act = wezterm.action
 
 config.color_scheme = "carbonfox"
 config.font = wezterm.font("OverpassM Nerd Font Mono")
+config.font_size = 12.0
 config.window_decorations = "RESIZE"
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
-config.window_background_opacity = 0.96
+local DEFAULT = 0.95
+local OPAQUE = 1.0
+config.window_background_opacity = DEFAULT
+
+-- background opacity switcher
+local opacity = DEFAULT
+config.keys = {
+  {
+    key = 'B',
+    mods = 'SUPER|SHIFT',
+    action = wezterm.action_callback(function(window, _)
+      if opacity == DEFAULT then
+        opacity = OPAQUE
+      else
+        opacity = DEFAULT
+      end
+      window:set_config_overrides({ window_background_opacity = opacity })
+    end),
+  },
+}
 
 -- persistent domain
 -- config.unix_domains = { { name = "unix" } }
@@ -19,19 +39,19 @@ config.window_background_opacity = 0.96
 -- config.leader = { mods = "CTRL", key = "a", timeout_milliseconds = 1000 }
 -- config.disable_default_key_bindings = true
 -- config.keys = {
-	-- { mods = "SUPER", key = "p", action = act.ActivateCommandPalette },
-	-- { mods = "SUPER", key = "n", action = act.SpawnWindow },
-	-- tabs
-	-- { mods = "SUPER", key = "t", action = act.SpawnTab("CurrentPaneDomain") },
-	-- { mods = "SUPER", key = "w", action = act.CloseCurrentTab({ confirm = true }) },
-	-- panes
-	-- { mods = "SUPER", key = "s", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-	-- { mods = "SUPER", key = "v", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-	-- { mods = "SUPER", key = "x", action = act.CloseCurrentPane({ confirm = true }) },
-	-- { mods = "SUPER", key = "h", action = act.ActivatePaneDirection("Left") },
-	-- { mods = "SUPER", key = "j", action = act.ActivatePaneDirection("Down") },
-	-- { mods = "SUPER", key = "k", action = act.ActivatePaneDirection("Up") },
-	-- { mods = "SUPER", key = "l", action = act.ActivatePaneDirection("Right") },
+-- { mods = "SUPER", key = "p", action = act.ActivateCommandPalette },
+-- { mods = "SUPER", key = "n", action = act.SpawnWindow },
+-- tabs
+-- { mods = "SUPER", key = "t", action = act.SpawnTab("CurrentPaneDomain") },
+-- { mods = "SUPER", key = "w", action = act.CloseCurrentTab({ confirm = true }) },
+-- panes
+-- { mods = "SUPER", key = "s", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+-- { mods = "SUPER", key = "v", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+-- { mods = "SUPER", key = "x", action = act.CloseCurrentPane({ confirm = true }) },
+-- { mods = "SUPER", key = "h", action = act.ActivatePaneDirection("Left") },
+-- { mods = "SUPER", key = "j", action = act.ActivatePaneDirection("Down") },
+-- { mods = "SUPER", key = "k", action = act.ActivatePaneDirection("Up") },
+-- { mods = "SUPER", key = "l", action = act.ActivatePaneDirection("Right") },
 -- }
 -- for i = 1, 9 do
 -- 	table.insert(config.keys, { mods = "SUPER", key = tostring(i), action = act.ActivateTab(i - 1) })
