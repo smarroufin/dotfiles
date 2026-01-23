@@ -1,15 +1,13 @@
 return {
   {
-    'EdenEast/nightfox.nvim',
+    'Mofiqul/dracula.nvim',
     lazy = false,
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme('carbonfox')
+      vim.cmd.colorscheme('dracula')
     end,
     opts = {
-      options = {
-        transparent = true,
-      },
+      transparent_bg = true,
     },
   },
 }

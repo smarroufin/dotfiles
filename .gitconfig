@@ -6,6 +6,8 @@
 	sort = -committerdate
 [column]
 	ui = auto
+[core]
+  pager = delta
 [diff]
 	algorithm = histogram
 	colorMoved = plain
@@ -26,6 +28,8 @@
 	autocorrect = prompt
 [init]
 	defaultBranch = main
+[interactive]
+  diffFilter = delta --color-only
 [merge]
 	conflictstyle = zdiff3
 [pull]
@@ -41,3 +45,10 @@
 [alias]
 	cm = commit -m
 	stasha = stash --all
+[delta]
+  theme = "Dracula"
+  navigate = true # use n and N to move between diff sections
+  dark = true
+  hyperlinks = true
+  hyperlinks-commit-link-format = "https://github.com/{owner}/{repo}/commit/{commit}"
+
