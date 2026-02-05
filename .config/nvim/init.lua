@@ -49,13 +49,13 @@ end, { desc = 'Previous diagnostic' })
 vim.keymap.set('n', '<leader>dj', function()
   vim.diagnostic.jump({ count = 1 })
 end, { desc = 'Next diagnostic' })
+-- Buffers
+vim.keymap.set('n', '<leader>ad', ':bd<CR>', { desc = 'Delete current buffer' })
 -- Window
 vim.keymap.set('n', '<leader>w', '<C-w>')
 -- Indent
 vim.keymap.set('v', '<', '<gv', { desc = 'Keep visual selection after indent' })
 vim.keymap.set('v', '>', '>gv', { desc = 'Keep visual selection after indent' })
--- Terminal
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 -- Registers
 vim.keymap.set({ 'n', 'v' }, 'x', '"_x', { desc = 'Delete without affecting register' })
 vim.keymap.set('v', '<leader>p', '"_dP', { desc = 'Paste without affecting register' })

@@ -7,6 +7,7 @@ return {
     opts = {
       keymap = {
         preset = 'enter',
+        ['<Escape>'] = { 'hide', 'fallback' },
       },
       completion = {
         list = {

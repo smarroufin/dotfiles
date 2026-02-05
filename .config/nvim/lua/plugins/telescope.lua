@@ -29,7 +29,6 @@ return {
       { '<leader>so', require('telescope.builtin').oldfiles, desc = 'Search [O]ld files' },
       { '<leader>sg', require('telescope.builtin').live_grep, desc = 'Search text [G]rep' }, -- requires ripgrep
       { '<leader>sr', require('telescope.builtin').resume, desc = 'Search [R]esume' },
-      { '<leader>sb', require('telescope.builtin').buffers, desc = 'Search [B]uffers' },
       { '<leader>sk', require('telescope.builtin').keymaps, desc = 'Search [K]eymaps' },
       { '<leader>sh', require('telescope.builtin').help_tags, desc = 'Search [H]elp' },
       {
@@ -41,6 +40,8 @@ return {
       },
       -- todo-comments
       { '<leader>st', '<CMD>TodoTelescope<CR>', desc = 'Search [T]oDo' },
+      -- buffers
+      { '<leader>as', require('telescope.builtin').buffers, desc = 'Search Buffers' },
       -- lsp
       { 'grd', require('telescope.builtin').lsp_definitions, desc = 'Goto [D]efinition' },
       { 'grr', require('telescope.builtin').lsp_references, desc = 'Goto [R]eferences' },

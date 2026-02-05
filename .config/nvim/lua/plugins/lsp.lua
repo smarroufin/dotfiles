@@ -12,6 +12,10 @@ vim.lsp.config('eslint', {
     },
   },
 })
+vim.lsp.config('gopls', {
+  settings = {
+  },
+})
 vim.lsp.config('html', {
   settings = {
     html = {
