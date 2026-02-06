@@ -24,15 +24,6 @@ return {
           'sort_text',
         },
       },
-      sources = {
-        providers = {
-          snippets = {
-            opts = {
-              global_snippets = { 'package' },
-            },
-          },
-        },
-      },
       signature = { enabled = true },
     },
   },
