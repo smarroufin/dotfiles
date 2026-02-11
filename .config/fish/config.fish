@@ -65,6 +65,8 @@ alias brew-casks="brew list --casks -1"
 # binaries proxies
 alias cloc="echo \"Use 'scc' instead.\"; command cloc"
 alias man="echo \"Remember you have 'tldr'?\"; command man"
+# scripts
+alias releases="bun ~/.scripts/to.ts releases"
 # tmux
 function tmux
     if test -n "$argv"
