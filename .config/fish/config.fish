@@ -79,7 +79,7 @@ alias tmuxadd="tmux new-window -t main && tmux attach -t main || tmux"
 alias tmuxdir="tmux attach -t (basename (pwd)) 2>/dev/null || tmux new-session -s (basename (pwd))"
 # package manager
 function n
-    if test -f "bun.lockb"
+    if test -f "bun.lock"
         bun $argv
     else if test -f "pnpm-lock.yaml"
         pnpm $argv
