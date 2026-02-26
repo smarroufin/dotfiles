@@ -1,0 +1,4 @@
+[tools]
+node = { version = "24", postinstall = "corepack enable" }
+bun = "latest"
+
