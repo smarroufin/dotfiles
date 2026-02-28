@@ -103,9 +103,6 @@ alias nr="n run"
 # prisma
 alias prisma-generate-migrate="nx prisma generate && nx prisma migrate deploy"
 
-# pnpm
-set -gx PNPM_HOME "/Users/smarroufin/Library/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
+# zoxide
+zoxide init fish | source
+
