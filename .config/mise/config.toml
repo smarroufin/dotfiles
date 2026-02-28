@@ -1,3 +1,6 @@
+[settings]
+idiomatic_version_file_enable_tools = ["node"]
+
 [tools]
 node = { version = "24", postinstall = "corepack enable" }
 bun = "latest"
