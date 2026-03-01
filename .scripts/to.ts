@@ -22,36 +22,24 @@ async function toReleases(args: string[]) {
     return error('package not found')
   }
 
-  const npmxUrl = `https://npmx.dev/package/${name}`
-  try {
-    let repoUrl: string | null = null
-    const npmxGithubLinks = await getRegexMatchesFromPage(npmxUrl, /https:\/\/github.com\/[a-z0-9-_]+\/[a-z0-9-_]+/gi)
-    if (npmxGithubLinks?.length) {
-      repoUrl = npmxGithubLinks[0]
-    } else {
-      const npmjsUrl = `https://www.npmjs.com/package/${name}`
-      const npmjsGithubLinks = await getRegexMatchesFromPage(npmjsUrl, /https:\/\/github.com\/[a-z0-9-_]+\/[a-z0-9-_]+/gi)
-      if (npmjsGithubLinks?.length) {
-        repoUrl = npmjsGithubLinks[0]
-      }
-    }
-
-    if (repoUrl) {
-      return await open(`${repoUrl}/releases`)
-    } else {
-      return await open(npmxUrl)
-    }
-  } catch {
-    return await open(npmxUrl)
+  const repoUrl = await getRepositoryUrlForPackage(name)
+  if (!repoUrl) {
+    return error('repository not found')
   }
+  return await open(`${repoUrl}/releases`)
 }
-async function getRegexMatchesFromPage(url: string, regex: RegExp) {
+
+async function getRepositoryUrlForPackage(pkg: string) {
   try {
-    const page = await fetch(url)
-    const body = await page.text()
-    return [...body.match(regex) ?? []]
-  } catch {
-    return []
+    const encodedName = pkg.replace('/', '%2F')
+    const registryResponse = await fetch(`https://registry.npmjs.org/${encodedName}`)
+    const registryBody = await registryResponse.json()
+    return registryBody.repository.url
+      .replace(/^git\+/, '')
+      .replace(/\.git$/, '')
+  } catch (e) {
+    console.error(e)
+    return null
   }
 }
 
