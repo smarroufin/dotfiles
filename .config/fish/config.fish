@@ -49,13 +49,6 @@ alias ll="ls -la"
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
-# gotos
-alias cdconfig="cd ~/.config"
-alias cdcode="cd ~/Code"
-function "gh-open"
-    set -l repo (git remote get-url origin | sed 's/.*github.com[:\/]\(.*\)\.git/\1/')
-    open "https://github.com/$repo"
-end
 # apps
 alias edit="nvim"
 alias lg="lazygit"
@@ -66,7 +59,10 @@ alias brew-casks="brew list --casks -1"
 alias cloc="echo \"Use 'scc' instead.\"; command cloc"
 alias man="echo \"Remember you have 'tldr'?\"; command man"
 # scripts
-alias releases="bun ~/.scripts/to.ts releases"
+alias gho="bun ~/.scripts/gh.ts index"
+alias ghi="bun ~/.scripts/gh.ts issues"
+alias ghp="bun ~/.scripts/gh.ts pulls"
+alias ghr="bun ~/.scripts/gh.ts releases"
 # tmux
 function tmux
     if test -n "$argv"
@@ -100,8 +96,6 @@ function nx
 end
 alias ni="n install"
 alias nr="n run"
-# prisma
-alias prisma-generate-migrate="nx prisma generate && nx prisma migrate deploy"
 
 # zoxide
 zoxide init fish | source
