@@ -10,9 +10,12 @@ config.window_decorations = "RESIZE"
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
-local DEFAULT = 0.95
+local DEFAULT = 0.90
 local OPAQUE = 1.0
 config.window_background_opacity = DEFAULT
+
+-- never skip close confirmation if enabled
+config.skip_close_confirmation_for_processes_named = {}
 
 -- background opacity switcher
 local opacity = DEFAULT
