@@ -5,9 +5,7 @@ set -gx EDITOR nvim
 
 # path
 set -x BREW_HOME /opt/homebrew
-set -x RUST_HOME $($BREW_HOME/bin/brew --prefix rustup)
-set -x VOLTA_HOME "$HOME/.volta"
-set -x PATH $PATH $BREW_HOME/bin $RUST_HOME/bin $VOLTA_HOME/bin
+set -x PATH $PATH $BREW_HOME/bin
 
 # orbstack
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
