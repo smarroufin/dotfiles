@@ -46,7 +46,7 @@
 	cm = commit -m
 	stasha = stash --all
 [delta]
-  theme = "Dracula"
+  theme = "ansi"
   navigate = true # use n and N to move between diff sections
   dark = true
   hyperlinks = true
