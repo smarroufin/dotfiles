@@ -42,7 +42,7 @@ vim.diagnostic.config({
   },
   virtual_text = { current_line = true },
 })
-vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Diagnostic details' })
+vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { desc = 'Diagnostic details' })
 vim.keymap.set('n', '<leader>dk', function()
   vim.diagnostic.jump({ count = -1 })
 end, { desc = 'Previous diagnostic' })

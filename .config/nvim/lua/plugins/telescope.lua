@@ -48,7 +48,7 @@ return {
       { 'gri', require('telescope.builtin').lsp_implementations, desc = 'Goto [I]mplementation' },
       { 'gO', require('telescope.builtin').lsp_document_symbols, desc = 'Document Symbols' },
       -- git
-      { '<leader>gs', require('telescope.builtin').git_status, desc = 'Git status' },
+      { '<leader>gg', require('telescope.builtin').git_status, desc = 'Git status' },
       { '<leader>gf', require('telescope.builtin').git_bcommits, desc = 'Git file commits' },
       -- telescope
       { '<leader><leader>b', require('telescope.builtin').builtin, desc = 'Builtin' },
