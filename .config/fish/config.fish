@@ -43,6 +43,7 @@ function fish_prompt
 end
 
 # aliases
+alias l="ls -la"
 alias ll="ls -la"
 alias rm="rm -i"
 alias cp="cp -i"
@@ -56,6 +57,8 @@ alias brew-casks="brew list --casks -1"
 # binaries proxies
 alias cloc="echo \"Use 'scc' instead.\"; command cloc"
 alias man="echo \"Remember you have 'tldr'?\"; command man"
+# gh
+alias ghd="gh dash"
 # scripts
 alias gho="bun ~/.scripts/gh.ts index"
 alias ghi="bun ~/.scripts/gh.ts issues"
@@ -86,7 +89,9 @@ function n
     end
 end
 function nx
-    if test -f "pnpm-lock.yaml"
+    if test -f "bun.lock"
+        bunx $argv
+    else if test -f "pnpm-lock.yaml"
         pnpx $argv
     else
         npx $argv

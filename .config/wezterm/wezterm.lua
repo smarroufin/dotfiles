@@ -17,6 +17,8 @@ config.window_background_opacity = DEFAULT
 -- never skip close confirmation if enabled
 config.skip_close_confirmation_for_processes_named = {}
 
+config.send_composed_key_when_left_alt_is_pressed = true
+
 -- background opacity switcher
 local opacity = DEFAULT
 config.keys = {

@@ -1,7 +1,11 @@
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
 
+[settings.ruby]
+compile = false
+
 [tools]
 node = { version = "24", postinstall = "corepack enable" }
 bun = "latest"
+ruby = "3.2"
 
