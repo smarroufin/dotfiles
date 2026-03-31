@@ -1,30 +1,29 @@
-return {
+vim.pack.add({
   {
-    'saghen/blink.cmp',
-    version = '1.*',
-    ---@module 'blink.cmp'
-    ---@type blink.cmp.Config
-    opts = {
-      keymap = {
-        preset = 'enter',
-        ['<Escape>'] = { 'hide', 'fallback' },
+    src = 'https://github.com/saghen/blink.cmp',
+    version = vim.version.range('^1'),
+  },
+})
+
+require('blink.cmp').setup({
+  keymap = {
+    preset = 'enter',
+    ['<Escape>'] = { 'hide', 'fallback' },
+  },
+  completion = {
+    list = {
+      selection = {
+        auto_insert = false,
       },
-      completion = {
-        list = {
-          selection = {
-            auto_insert = false,
-          },
-        },
-      },
-      fuzzy = {
-        sorts = {
-          'exact',
-          -- defaults
-          'score',
-          'sort_text',
-        },
-      },
-      signature = { enabled = true },
     },
   },
-}
+  fuzzy = {
+    sorts = {
+      'exact',
+      -- defaults
+      'score',
+      'sort_text',
+    },
+  },
+  signature = { enabled = true },
+})

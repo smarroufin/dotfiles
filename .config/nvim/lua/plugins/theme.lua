@@ -1,13 +1,9 @@
-return {
-  {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
-    init = function()
-      vim.cmd.colorscheme('tokyonight-night')
-    end,
-    opts = {
-      transparent = true,
-    },
-  },
-}
+vim.pack.add({
+  'https://github.com/folke/tokyonight.nvim',
+})
+
+require('tokyonight').setup({
+  transparent = true,
+})
+
+vim.cmd.colorscheme('tokyonight-night')
