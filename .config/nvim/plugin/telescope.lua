@@ -1,18 +1,16 @@
+vim.api.nvim_create_autocmd('PackChanged', {
+  callback = function(ev)
+    local name, kind = ev.data.spec.name, ev.data.kind
+    if name == 'telescope-fzf-native.nvim' and (kind == 'install' or kind == 'update') then
+      vim.system({ 'make' }, { cwd = ev.data.path })
+    end
+  end,
+})
+
 vim.pack.add({
-  {
-    src = 'https://github.com/nvim-telescope/telescope.nvim',
-    version = vim.version.range('^0.1'),
-  },
+  'https://github.com/nvim-telescope/telescope.nvim',
   'https://github.com/nvim-lua/plenary.nvim',
-  {
-    src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim', -- requires gcc & make
-    post_install = function()
-      vim.cmd('make')
-    end,
-    post_update = function()
-      vim.cmd('make')
-    end,
-  },
+  'https://github.com/nvim-telescope/telescope-fzf-native.nvim', -- requires gcc & make
   'https://github.com/nvim-telescope/telescope-ui-select.nvim',
   'https://github.com/nvim-treesitter/nvim-treesitter',
   'https://github.com/nvim-tree/nvim-web-devicons',
@@ -48,7 +46,7 @@ telescope.setup({
     },
   },
 })
--- telescope.load_extension('fzf')
+telescope.load_extension('fzf')
 telescope.load_extension('ui-select')
 -- configure file preview
 vim.api.nvim_create_autocmd('User', {
