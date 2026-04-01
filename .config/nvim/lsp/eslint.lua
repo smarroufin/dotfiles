@@ -7,8 +7,5 @@ return {
     format = {
       enable = true, -- If not enabled, eslint LSP won't respond to document formatting requests
     },
-    workingDirectories = {
-      mode = 'auto',
-    },
   },
 }
