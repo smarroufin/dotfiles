@@ -6,6 +6,7 @@ local act = wezterm.action
 config.color_scheme = "Tokyo Night"
 config.font = wezterm.font("OverpassM Nerd Font Mono")
 config.font_size = 12.0
+config.freetype_load_flags = "NO_HINTING"
 config.window_decorations = "RESIZE"
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
