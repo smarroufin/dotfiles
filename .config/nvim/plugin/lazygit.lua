@@ -3,4 +3,4 @@ vim.pack.add({
   'https://github.com/nvim-lua/plenary.nvim',
 })
 
-require('util').keymap('<leader>lg', '<cmd>LazyGit<cr>', { desc = 'LazyGit' })
+require('util').keymap('<leader>lg', ':LazyGit<cr>', { desc = 'LazyGit' })

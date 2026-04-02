@@ -67,7 +67,7 @@ util.keymap('<leader>sk', require('telescope.builtin').keymaps, { desc = 'Search
 util.keymap('<leader>sh', require('telescope.builtin').help_tags, { desc = 'Search [H]elp' })
 util.keymap('<leader>sn', function() require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config') }) end, { desc = 'Search [N]eovim files' })
 -- todo-comments
-util.keymap('<leader>st', '<CMD>TodoTelescope<CR>', { desc = 'Search [T]oDo' })
+util.keymap('<leader>st', ':TodoTelescope<cr>', { desc = 'Search [T]oDo' })
 -- buffers
 util.keymap('<leader>as', require('telescope.builtin').buffers, { desc = 'Search Buffers' })
 -- lsp

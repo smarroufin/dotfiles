@@ -30,7 +30,7 @@ end)
 -- [[ Keymaps ]]
 local util = require('util')
 util.keymap('<Space>', '<Nop>', { desc = 'Unmap space' })
-util.keymap('<Esc>', '<Esc>:noh<CR>', { desc = 'Clear highlights' })
+util.keymap('<Esc>', '<Esc>:noh<cr>', { desc = 'Clear highlights' })
 -- Diagnostic
 vim.diagnostic.config({
   signs = {
@@ -47,7 +47,7 @@ util.keymap('<leader>dd', vim.diagnostic.open_float, { desc = 'Diagnostic detail
 util.keymap('<leader>dk', function() vim.diagnostic.jump({ count = -1 }) end, { desc = 'Previous diagnostic' })
 util.keymap('<leader>dj', function() vim.diagnostic.jump({ count = 1 }) end, { desc = 'Next diagnostic' })
 -- Buffers
-util.keymap('<leader>ad', ':bd<CR>', { desc = 'Delete current buffer' })
+util.keymap('<leader>ad', ':bd<cr>', { desc = 'Delete current buffer' })
 -- Window
 util.keymap('<leader>w', '<C-w>')
 -- Indent
