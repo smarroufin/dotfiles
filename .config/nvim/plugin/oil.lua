@@ -9,6 +9,4 @@ require('oil').setup({
   },
 })
 
-vim.keymap.set('n', '<leader>e', function()
-  require('oil').open()
-end, { desc = 'Open Oil' })
+require('util').keymap('<leader>e', function() require('oil').open() end, { desc = 'Open Oil' })

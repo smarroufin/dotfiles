@@ -28,8 +28,9 @@ vim.schedule(function()
 end)
 
 -- [[ Keymaps ]]
-vim.keymap.set('n', '<Space>', '<Nop>', { desc = 'Unmap space' })
-vim.keymap.set('n', '<Esc>', '<Esc>:noh<CR>', { desc = 'Clear highlights' })
+local util = require('util')
+util.keymap('<Space>', '<Nop>', { desc = 'Unmap space' })
+util.keymap('<Esc>', '<Esc>:noh<CR>', { desc = 'Clear highlights' })
 -- Diagnostic
 vim.diagnostic.config({
   signs = {
@@ -42,23 +43,19 @@ vim.diagnostic.config({
   },
   virtual_text = { current_line = true },
 })
-vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { desc = 'Diagnostic details' })
-vim.keymap.set('n', '<leader>dk', function()
-  vim.diagnostic.jump({ count = -1 })
-end, { desc = 'Previous diagnostic' })
-vim.keymap.set('n', '<leader>dj', function()
-  vim.diagnostic.jump({ count = 1 })
-end, { desc = 'Next diagnostic' })
+util.keymap('<leader>dd', vim.diagnostic.open_float, { desc = 'Diagnostic details' })
+util.keymap('<leader>dk', function() vim.diagnostic.jump({ count = -1 }) end, { desc = 'Previous diagnostic' })
+util.keymap('<leader>dj', function() vim.diagnostic.jump({ count = 1 }) end, { desc = 'Next diagnostic' })
 -- Buffers
-vim.keymap.set('n', '<leader>ad', ':bd<CR>', { desc = 'Delete current buffer' })
+util.keymap('<leader>ad', ':bd<CR>', { desc = 'Delete current buffer' })
 -- Window
-vim.keymap.set('n', '<leader>w', '<C-w>')
+util.keymap('<leader>w', '<C-w>')
 -- Indent
-vim.keymap.set('v', '<', '<gv', { desc = 'Keep visual selection after indent' })
-vim.keymap.set('v', '>', '>gv', { desc = 'Keep visual selection after indent' })
+util.keymap('<', '<gv', { desc = 'Keep visual selection after indent', modes = 'v' })
+util.keymap('>', '>gv', { desc = 'Keep visual selection after indent', modes = 'v' })
 -- Registers
-vim.keymap.set({ 'n', 'v' }, 'x', '"_x', { desc = 'Delete without affecting register' })
-vim.keymap.set('v', '<leader>p', '"_dP', { desc = 'Paste without affecting register' })
+util.keymap('x', '"_x', { desc = 'Delete without affecting register', modes = { 'n', 'v' } })
+util.keymap('<leader>p', '"_dP', { desc = 'Paste without affecting register', modes = 'v' })
 
 -- [[ Autocommands ]]
 vim.api.nvim_create_autocmd('TextYankPost', {

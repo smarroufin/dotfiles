@@ -56,30 +56,27 @@ vim.api.nvim_create_autocmd('User', {
   end,
 })
 
+local util = require('util')
 -- search
-vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files, { desc = 'Search [F]iles' })
-vim.keymap.set('n', '<leader>F', function()
-  require('telescope.builtin').find_files({ no_ignore = true, no_ignore_parent = true })
-end, { desc = 'Search All [F]iles' })
-vim.keymap.set('n', '<leader>so', require('telescope.builtin').oldfiles, { desc = 'Search [O]ld files' })
-vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = 'Search text [G]rep' }) -- requires ripgrep
-vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 'Search [R]esume' })
-vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = 'Search [K]eymaps' })
-vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = 'Search [H]elp' })
-vim.keymap.set('n', '<leader>sn', function()
-  require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config') })
-end, { desc = 'Search [N]eovim files' })
+util.keymap('<leader>f', require('telescope.builtin').find_files, { desc = 'Search [F]iles' })
+util.keymap('<leader>F', function() require('telescope.builtin').find_files({ no_ignore = true, no_ignore_parent = true }) end, { desc = 'Search All [F]iles' })
+util.keymap('<leader>so', require('telescope.builtin').oldfiles, { desc = 'Search [O]ld files' })
+util.keymap('<leader>sg', require('telescope.builtin').live_grep, { desc = 'Search text [G]rep' }) -- requires ripgrep
+util.keymap('<leader>sr', require('telescope.builtin').resume, { desc = 'Search [R]esume' })
+util.keymap('<leader>sk', require('telescope.builtin').keymaps, { desc = 'Search [K]eymaps' })
+util.keymap('<leader>sh', require('telescope.builtin').help_tags, { desc = 'Search [H]elp' })
+util.keymap('<leader>sn', function() require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config') }) end, { desc = 'Search [N]eovim files' })
 -- todo-comments
-vim.keymap.set('n', '<leader>st', '<CMD>TodoTelescope<CR>', { desc = 'Search [T]oDo' })
+util.keymap('<leader>st', '<CMD>TodoTelescope<CR>', { desc = 'Search [T]oDo' })
 -- buffers
-vim.keymap.set('n', '<leader>as', require('telescope.builtin').buffers, { desc = 'Search Buffers' })
+util.keymap('<leader>as', require('telescope.builtin').buffers, { desc = 'Search Buffers' })
 -- lsp
-vim.keymap.set('n', 'grd', require('telescope.builtin').lsp_definitions, { desc = 'Goto [D]efinition' })
-vim.keymap.set('n', 'grr', require('telescope.builtin').lsp_references, { desc = 'Goto [R]eferences' })
-vim.keymap.set('n', 'gri', require('telescope.builtin').lsp_implementations, { desc = 'Goto [I]mplementation' })
-vim.keymap.set('n', 'gO', require('telescope.builtin').lsp_document_symbols, { desc = 'Document Symbols' })
+util.keymap('grd', require('telescope.builtin').lsp_definitions, { desc = 'Goto [D]efinition' })
+util.keymap('grr', require('telescope.builtin').lsp_references, { desc = 'Goto [R]eferences' })
+util.keymap('gri', require('telescope.builtin').lsp_implementations, { desc = 'Goto [I]mplementation' })
+util.keymap('gO', require('telescope.builtin').lsp_document_symbols, { desc = 'Document Symbols' })
 -- git
-vim.keymap.set('n', '<leader>gg', require('telescope.builtin').git_status, { desc = 'Git status' })
-vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_bcommits, { desc = 'Git file commits' })
+util.keymap('<leader>gg', require('telescope.builtin').git_status, { desc = 'Git status' })
+util.keymap('<leader>gf', require('telescope.builtin').git_bcommits, { desc = 'Git file commits' })
 -- telescope
-vim.keymap.set('n', '<leader><leader>b', require('telescope.builtin').builtin, { desc = 'Builtin' })
+util.keymap('<leader><leader>b', require('telescope.builtin').builtin, { desc = 'Builtin' })

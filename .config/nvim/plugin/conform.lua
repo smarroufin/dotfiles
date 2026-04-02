@@ -12,6 +12,4 @@ require('conform').setup({
   },
 })
 
-vim.keymap.set('n', '<leader>c', function()
-  require('conform').format()
-end, { desc = 'Format buffer with [C]onform' })
+require('util').keymap('<leader>c', function() require('conform').format() end, { desc = 'Format buffer with [C]onform' })
