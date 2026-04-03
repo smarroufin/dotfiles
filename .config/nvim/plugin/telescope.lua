@@ -28,7 +28,8 @@ telescope.setup({
     vimgrep_arguments = vimgrep_arguments,
     layout_config = {
       horizontal = {
-        width = 0.9,
+        width = 0.999,
+        height = 0.999,
         preview_cutoff = 100,
       },
     },

@@ -49,6 +49,7 @@
   theme = "ansi"
   navigate = true # use n and N to move between diff sections
   dark = true
+  hunk-header-style = "omit"
   hyperlinks = true
   hyperlinks-commit-link-format = "https://github.com/{owner}/{repo}/commit/{commit}"
 

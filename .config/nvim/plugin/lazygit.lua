@@ -3,4 +3,6 @@ vim.pack.add({
   'https://github.com/nvim-lua/plenary.nvim',
 })
 
+vim.g.lazygit_floating_window_scaling_factor = 1
+
 require('util').keymap('<leader>lg', ':LazyGit<cr>', { desc = 'LazyGit' })
