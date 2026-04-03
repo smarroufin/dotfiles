@@ -17,6 +17,16 @@ require('blink.cmp').setup({
       },
     },
   },
+  cmdline = {
+    keymap = {
+      preset = 'default',
+    },
+    completion = {
+      menu = {
+        auto_show = true,
+      },
+    },
+  },
   fuzzy = {
     sorts = {
       'exact',
