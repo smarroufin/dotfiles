@@ -5,7 +5,7 @@ set -gx EDITOR nvim
 
 # path
 set -x BREW_HOME /opt/homebrew
-set -x PATH $PATH $BREW_HOME/bin
+set -x PATH $BREW_HOME/bin $PATH
 
 # orbstack
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
