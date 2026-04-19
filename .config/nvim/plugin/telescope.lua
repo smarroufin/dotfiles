@@ -63,6 +63,7 @@ util.keymap('<leader>f', require('telescope.builtin').find_files, { desc = 'Sear
 util.keymap('<leader>F', function() require('telescope.builtin').find_files({ no_ignore = true, no_ignore_parent = true }) end, { desc = 'Search All [F]iles' })
 util.keymap('<leader>so', require('telescope.builtin').oldfiles, { desc = 'Search [O]ld files' })
 util.keymap('<leader>sg', require('telescope.builtin').live_grep, { desc = 'Search text [G]rep' }) -- requires ripgrep
+util.keymap('<leader>sg', require('telescope.builtin').grep_string, { desc = 'Search text [G]rep', modes = 'v' }) -- requires ripgrep
 util.keymap('<leader>sr', require('telescope.builtin').resume, { desc = 'Search [R]esume' })
 util.keymap('<leader>sk', require('telescope.builtin').keymaps, { desc = 'Search [K]eymaps' })
 util.keymap('<leader>sh', require('telescope.builtin').help_tags, { desc = 'Search [H]elp' })
@@ -70,7 +71,9 @@ util.keymap('<leader>sn', function() require('telescope.builtin').find_files({ c
 -- todo-comments
 util.keymap('<leader>st', ':TodoTelescope<cr>', { desc = 'Search [T]oDo' })
 -- buffers
-util.keymap('<leader>as', require('telescope.builtin').buffers, { desc = 'Search Buffers' })
+util.keymap('<leader>js', require('telescope.builtin').buffers, { desc = 'Search Buffers' })
+-- diagnostic
+util.keymap('<leader>ds', require('telescope.builtin').diagnostics, { desc = 'Search Diagnostic' })
 -- lsp
 util.keymap('grd', require('telescope.builtin').lsp_definitions, { desc = 'Goto [D]efinition' })
 util.keymap('grr', require('telescope.builtin').lsp_references, { desc = 'Goto [R]eferences' })

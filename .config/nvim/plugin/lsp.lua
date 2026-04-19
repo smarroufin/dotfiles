@@ -28,6 +28,7 @@ vim.lsp.enable({
   'eslint',
   'html',
   'lua_ls',
+  'tailwindcss',
   'ts_ls',
   'vue_ls',
 })

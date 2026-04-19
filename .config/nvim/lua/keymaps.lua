@@ -6,7 +6,9 @@ util.keymap('<leader>dd', vim.diagnostic.open_float, { desc = 'Diagnostic detail
 util.keymap('<leader>dk', function() vim.diagnostic.jump({ count = -1 }) end, { desc = 'Previous diagnostic' })
 util.keymap('<leader>dj', function() vim.diagnostic.jump({ count = 1 }) end, { desc = 'Next diagnostic' })
 -- Buffers
-util.keymap('<leader>ad', ':bd<cr>', { desc = 'Delete current buffer' })
+util.keymap('<leader>jd', ':bdelete<cr>', { desc = 'Delete current buffer' })
+util.keymap("<leader>jj", ":bnext<cr>", { desc = "Next buffer" })
+util.keymap("<leader>jk", ":bprevious<cr>", { desc = "Previous buffer" })
 -- Window
 util.keymap('<leader>w', '<C-w>')
 -- Indent
