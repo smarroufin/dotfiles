@@ -7,9 +7,6 @@ set -gx EDITOR nvim
 set -x BREW_HOME /opt/homebrew
 set -x PATH $BREW_HOME/bin $PATH
 
-# orbstack
-source ~/.orbstack/shell/init2.fish 2>/dev/null || :
-
 # prompt
 function fish_prompt
     set -l last_pipestatus $pipestatus
@@ -51,6 +48,7 @@ alias mv="mv -i"
 # apps
 alias edit="nvim"
 alias lg="lazygit"
+alias ld="lazydocker"
 # brew
 alias brew-formulae="brew list --formulae -1 --installed-on-request"
 alias brew-casks="brew list --casks -1"
@@ -66,7 +64,7 @@ alias ghp="bun ~/.scripts/gh.ts pulls"
 alias ghr="bun ~/.scripts/gh.ts releases"
 # tmux
 function tmux
-    if test -n "$argv"
+    if test (count $argv) -gt 0
         command tmux $argv
     else
         command tmux attach -t main 2>/dev/null || tmux new-session -s main
@@ -92,7 +90,7 @@ function nx
     if test -f "bun.lock"
         bunx $argv
     else if test -f "pnpm-lock.yaml"
-        pnpx $argv
+        pnpm dlx $argv
     else
         npx $argv
     end
