@@ -106,12 +106,12 @@ util.keymap('gO', require('telescope.builtin').lsp_document_symbols, { desc = 'D
 -- git
 util.keymap('<leader>gg', function()
   require('telescope.builtin').git_status({
-    previewer = git_previewer
+    previewer = git_previewer,
   })
 end, { desc = 'Git status' })
 util.keymap('<leader>gf', function()
   require('telescope.builtin').git_bcommits({
-    previewer = git_previewer
+    previewer = git_previewer,
   })
 end, { desc = 'Git file commits' })
 -- telescope
