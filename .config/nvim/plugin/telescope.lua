@@ -33,6 +33,11 @@ telescope.setup({
         preview_cutoff = 100,
       },
     },
+    -- fixes <C-d> and <C-u> for git delta previewer
+    set_env = {
+      LESS = '',
+      DELTA_PAGER = 'less',
+    },
   },
   pickers = {
     find_files = {
@@ -54,6 +59,25 @@ vim.api.nvim_create_autocmd('User', {
   pattern = 'TelescopePreviewerLoaded',
   callback = function()
     vim.wo.wrap = true
+  end,
+})
+
+-- delta previewers
+-- https://github.com/nvim-telescope/telescope.nvim/issues/605#issuecomment-790763109
+local previewers = require('telescope.previewers')
+local git_previewer = previewers.new_termopen_previewer({
+  get_command = function(entry)
+    -- git_status
+    if entry.status ~= nil then
+      -- untracked: nothing in HEAD to diff against, show the file as fully added
+      if entry.status == '??' then
+        return { 'git', '-c', 'core.pager=delta', '-c', 'delta.side-by-side=false', 'diff', '--no-index', '--', '/dev/null', entry.path }
+      end
+      -- HEAD, not the index: plain `git diff` is empty once the file is staged
+      return { 'git', '-c', 'core.pager=delta', '-c', 'delta.side-by-side=false', 'diff', 'HEAD', '--', entry.path }
+    end
+    -- git_bcommits
+    return { 'git', '-c', 'core.pager=delta', '-c', 'delta.side-by-side=true', 'diff', entry.value .. '^!', '--', entry.current_file }
   end,
 })
 
@@ -80,7 +104,15 @@ util.keymap('grr', require('telescope.builtin').lsp_references, { desc = 'Goto [
 util.keymap('gri', require('telescope.builtin').lsp_implementations, { desc = 'Goto [I]mplementation' })
 util.keymap('gO', require('telescope.builtin').lsp_document_symbols, { desc = 'Document Symbols' })
 -- git
-util.keymap('<leader>gg', require('telescope.builtin').git_status, { desc = 'Git status' })
-util.keymap('<leader>gf', require('telescope.builtin').git_bcommits, { desc = 'Git file commits' })
+util.keymap('<leader>gg', function()
+  require('telescope.builtin').git_status({
+    previewer = git_previewer
+  })
+end, { desc = 'Git status' })
+util.keymap('<leader>gf', function()
+  require('telescope.builtin').git_bcommits({
+    previewer = git_previewer
+  })
+end, { desc = 'Git file commits' })
 -- telescope
 util.keymap('<leader><leader>b', require('telescope.builtin').builtin, { desc = 'Builtin' })
