@@ -1,0 +1,15 @@
+{
+  "project_panel": {
+    "dock": "left"
+  },
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": false,
+    "anthropic_retention": false
+  },
+  "vim_mode": true,
+  "theme": {
+    "light": "Ayu Dark",
+    "dark": "Ayu Dark"
+  },
+}
