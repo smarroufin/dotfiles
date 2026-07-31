@@ -55,8 +55,6 @@ alias brew-casks="brew list --casks -1"
 # binaries proxies
 alias cloc="echo \"Use 'scc' instead.\"; command cloc"
 alias man="echo \"Remember you have 'tldr'?\"; command man"
-# gh
-alias ghd="gh dash"
 # scripts
 alias gho="bun ~/.scripts/gh.ts index"
 alias ghi="bun ~/.scripts/gh.ts issues"
