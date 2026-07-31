@@ -1,0 +1,7 @@
+background-opacity = 0.9
+font-family = "OverpassM Nerd Font Mono"
+font-size = 12
+macos-titlebar-style = "hidden"
+maximize = true
+shell-integration = "fish"
+theme = "tokyo-night"
