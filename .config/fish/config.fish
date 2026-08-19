@@ -5,7 +5,9 @@ set -gx EDITOR nvim
 
 # path
 set -x BREW_HOME /opt/homebrew
-set -x PATH $BREW_HOME/bin $PATH
+fish_add_path $BREW_HOME/bin
+set -Ux MISE_FISH_AUTO_ACTIVATE 0
+mise activate fish | source
 
 # prompt
 function fish_prompt
