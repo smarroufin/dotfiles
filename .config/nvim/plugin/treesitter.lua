@@ -42,6 +42,7 @@ local ts_parsers = {
   'markdown',
   'markdown_inline',
   'prisma',
+  'python',
   'query',
   'scss',
   'toml',

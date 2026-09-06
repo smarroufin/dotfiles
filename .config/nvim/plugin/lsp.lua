@@ -14,6 +14,8 @@ require('mason-tool-installer').setup({
     'eslint-lsp',
     'html-lsp',
     'lua-language-server',
+    'pyright',
+    'ruff',
     'tailwindcss-language-server',
     'typescript-language-server',
     'vue-language-server',
@@ -23,11 +25,14 @@ require('mason-tool-installer').setup({
   auto_update = true,
 })
 
+-- https://github.com/neovim/nvim-lspconfig/tree/master/lsp
 vim.lsp.enable({
   'cssls',
   'eslint',
   'html',
   'lua_ls',
+  'pyright',
+  'ruff',
   'tailwindcss',
   'ts_ls',
   'vue_ls',
