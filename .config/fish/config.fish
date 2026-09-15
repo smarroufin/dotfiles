@@ -2,6 +2,7 @@
 set fish_greeting
 
 set -gx EDITOR nvim
+set -gx XDG_CONFIG_HOME $HOME/.config
 
 # path
 set -x BREW_HOME /opt/homebrew

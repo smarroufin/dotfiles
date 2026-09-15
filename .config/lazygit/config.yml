@@ -1,0 +1,12 @@
+git:
+  diffRenderers:
+    - colorArg: always
+      command: delta -s --dark --paging=never --24-bit-color=never
+
+os:
+  # Edit files in the nvim that launched lazygit
+  editPreset: nvim-remote
+  edit: |-
+    begin; if test -z "$NVIM"; nvim -- {{filename}}; else; nvim --server "$NVIM" --remote-send "q"; nvim --server "$NVIM" --remote-send '<Cmd>wincmd p<CR>'; nvim --server "$NVIM" --remote {{filename}}; end; end
+  # editAtLine:
+  # editAtLineAndWait:
