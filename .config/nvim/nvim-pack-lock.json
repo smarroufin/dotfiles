@@ -41,6 +41,10 @@
       "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
       "src": "https://github.com/mason-org/mason.nvim"
     },
+    "minuet-ai.nvim": {
+      "rev": "3b0a4c5f97b7124d94302c608fbe01c0270d4fbe",
+      "src": "https://github.com/milanglacier/minuet-ai.nvim"
+    },
     "nvim-lspconfig": {
       "rev": "5492a24edd68f78d8a778edcb8905d0a28993abc",
       "src": "https://github.com/neovim/nvim-lspconfig"
