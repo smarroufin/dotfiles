@@ -1,0 +1,23 @@
+onboarding = false
+
+[keys]
+prefix = "ctrl+f"
+detach = "prefix+d"
+split_horizontal = "prefix+s"
+next_agent = "prefix+u"
+
+[theme]
+name = "catppuccin"
+auto_switch = false
+
+[ui]
+prompt_new_tab_name = false
+pane_outer_borders = false
+pane_gaps = false
+
+[ui.toast]
+delivery = "herdr"
+delay_seconds = 3
+
+[ui.toast.herdr]
+position = "top-right"

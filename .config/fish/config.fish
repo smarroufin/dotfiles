@@ -74,8 +74,16 @@ function tmux
         command tmux attach -t main 2>/dev/null || tmux new-session -s main
     end
 end
-alias tmuxadd="tmux new-window -t main && tmux attach -t main || tmux"
 alias tmuxdir="tmux attach -t (basename (pwd)) 2>/dev/null || tmux new-session -s (basename (pwd))"
+# herdr
+function her
+    if test (count $argv) -gt 0
+        command herdr $argv
+    else
+        command herdr --session main
+    end
+end
+alias herdir="herdr --session (basename (pwd))"
 # package manager
 function n
     if test -f "bun.lock"
