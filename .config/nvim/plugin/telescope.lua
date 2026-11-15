@@ -2,7 +2,7 @@ vim.api.nvim_create_autocmd('PackChanged', {
   callback = function(ev)
     local name, kind = ev.data.spec.name, ev.data.kind
     if name == 'telescope-fzf-native.nvim' and (kind == 'install' or kind == 'update') then
-      vim.system({ 'make' }, { cwd = ev.data.path })
+      vim.system({ 'make' }, { cwd = ev.data.path }):wait()
     end
   end,
 })
@@ -104,11 +104,6 @@ util.keymap('grr', require('telescope.builtin').lsp_references, { desc = 'Goto [
 util.keymap('gri', require('telescope.builtin').lsp_implementations, { desc = 'Goto [I]mplementation' })
 util.keymap('gO', require('telescope.builtin').lsp_document_symbols, { desc = 'Document Symbols' })
 -- git
-util.keymap('<leader>gg', function()
-  require('telescope.builtin').git_status({
-    previewer = git_previewer,
-  })
-end, { desc = 'Git status' })
 util.keymap('<leader>gf', function()
   require('telescope.builtin').git_bcommits({
     previewer = git_previewer,
