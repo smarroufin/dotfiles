@@ -10,6 +10,8 @@ set -gx XDG_CONFIG_HOME $HOME/.config
 # path
 set -x BREW_HOME /opt/homebrew
 fish_add_path $BREW_HOME/bin
+# plannotator
+fish_add_path $HOME/.local/bin
 set -Ux MISE_FISH_AUTO_ACTIVATE 0
 mise activate fish | source
 
@@ -109,6 +111,12 @@ function nx
 end
 alias ni="n install"
 alias nr="n run"
+
+# abbreviations
+# ollama
+abbr --set-cursor olen 'ollama run translategemma:4b "Translate to english (if is word give several synonymes, else plain translate): \'%\'"'
+abbr --set-cursor olfr 'ollama run translategemma:4b "Translate to french (if is word give several synonymes, else plain translate): \'%\'"'
+abbr --set-cursor oltalk 'ollama run translategemma:4b "\'%\'"'
 
 # zoxide
 zoxide init fish | source
