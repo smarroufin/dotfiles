@@ -1,6 +1,9 @@
 # disable greeting
 set fish_greeting
 
+# theme
+fish_config theme choose catppuccin-mocha
+
 set -gx EDITOR nvim
 set -gx XDG_CONFIG_HOME $HOME/.config
 

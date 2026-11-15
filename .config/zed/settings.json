@@ -8,8 +8,11 @@
     "anthropic_retention": false
   },
   "vim_mode": true,
+  "auto_install_extensions": {
+    "catppuccin": true
+  },
   "theme": {
-    "light": "Ayu Dark",
-    "dark": "Ayu Dark"
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha"
   },
 }

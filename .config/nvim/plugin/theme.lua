@@ -1,9 +1,10 @@
 vim.pack.add({
-  'https://github.com/folke/tokyonight.nvim',
+  { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' },
 })
 
-require('tokyonight').setup({
-  transparent = true,
+require('catppuccin').setup({
+  flavour = 'mocha',
+  transparent_background = true,
 })
 
-vim.cmd.colorscheme('tokyonight-night')
+vim.cmd.colorscheme('catppuccin-mocha')

@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
 
-config.color_scheme = "Tokyo Night"
+config.color_scheme = "Catppuccin Mocha"
 config.font = wezterm.font("OverpassM Nerd Font Mono")
 config.font_size = 12.0
 config.freetype_load_flags = "NO_HINTING"
